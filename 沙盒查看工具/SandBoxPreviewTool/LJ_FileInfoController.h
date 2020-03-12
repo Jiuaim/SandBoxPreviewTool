@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SZSandBoxFileInfoModel.h"
 
 @interface LJ_FileInfoController : UIViewController
 
-@property (nonatomic,copy)NSString * filePath;//文件路径
-@property (nonatomic,copy)NSString * fileName;//文件名称
-@property (nonatomic,strong)NSDictionary * fileInfo;//文件名称
+@property (nonatomic,copy)NSString *filePath;
+@property (nonatomic,strong)SZSandBoxFileInfoModel *fileInfo;
+
 //根据文件类型和路径创建
-+ (instancetype)createWithFileName:(NSString *)fileName andFilePath:(NSString *)filePath andFileInfo:(NSDictionary *)fileInfo;
++ (instancetype)createWithFilePath:(NSString *)filePath andFileInfo:(SZSandBoxFileInfoModel *)fileInfo;
 
 @end

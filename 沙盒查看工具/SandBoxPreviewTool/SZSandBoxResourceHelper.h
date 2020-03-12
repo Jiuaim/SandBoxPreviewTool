@@ -1,15 +1,17 @@
 //
-//  SLUnilityObject.h
+//  SZSandBoxResourceHelper.h
 //  沙盒查看工具
 //
-//  Created by zhengxin  on 2018/4/23.
-//  Copyright © 2018 魏家园潇. All rights reserved.
+//  Created by hsz on 2020/3/12.
+//  Copyright © 2020 魏家园潇. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface SLUnilityObject : NSObject
+NS_ASSUME_NONNULL_BEGIN
+
+@interface SZSandBoxResourceHelper : NSObject
 
 + (nullable NSBundle *)resourcesBundle;
 + (nullable UIImage *)imageWithName:(nullable NSString *)name;
@@ -18,3 +20,5 @@
 + (nullable UIImage *)imageInBundle:(nullable NSBundle *)bundle withName:(nullable NSString *)name;
 
 @end
+
+NS_ASSUME_NONNULL_END

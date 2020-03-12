@@ -20,7 +20,7 @@
 
 static SandBoxPreviewTool *_singleton;
 
-+ (instancetype)sharedTool{
++ (instancetype)sharedTool {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _singleton = [[self alloc] init];;
@@ -28,7 +28,7 @@ static SandBoxPreviewTool *_singleton;
     return _singleton;
 }
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone{
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _singleton = [super allocWithZone:zone];
@@ -37,7 +37,7 @@ static SandBoxPreviewTool *_singleton;
 }
 
 #pragma mark 打开或关闭应用磁盘目录面板
-- (void)autoOpenCloseApplicationDiskDirectoryPanel{
+- (void)autoOpenCloseApplicationDiskDirectoryPanel {
     UIViewController *root = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
     BOOL isEqual = root.presentedViewController == _navVC;
     if (root.presentedViewController) {
@@ -53,17 +53,15 @@ static SandBoxPreviewTool *_singleton;
     }
 }
 
-- (void)presentNav{
+- (void)presentNav {
     if (_navVC) {
       [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:_navVC animated:YES completion:nil];
-    }else{
+    } else {
       LJ_DirToolNavigatorController * vc = [LJ_DirToolNavigatorController create];
       vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
       [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:nil];
       _navVC = vc;
     }
 }
-
-
 
 @end

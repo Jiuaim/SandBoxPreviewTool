@@ -1,24 +1,24 @@
 //
-//  SLUnilityObject.m
+//  SZSandBoxResourceHelper.m
 //  沙盒查看工具
 //
-//  Created by zhengxin  on 2018/4/23.
-//  Copyright © 2018 魏家园潇. All rights reserved.
+//  Created by hsz on 2020/3/12.
+//  Copyright © 2020 魏家园潇. All rights reserved.
 //
 
-#import "SLUnilityObject.h"
+#import "SZSandBoxResourceHelper.h"
 
-NSString *const QMUIResourcesMainBundleName = @"SandBoxPreviewTool.bundle";
+NSString *const SZSandBoxResourcesMainBundleName = @"SandBoxPreviewTool.bundle";
 
-@implementation SLUnilityObject
+@implementation SZSandBoxResourceHelper
 
 + (UIImage *)imageWithName:(NSString *)name {
-    NSBundle *bundle = [SLUnilityObject resourcesBundle];
-    return [SLUnilityObject imageInBundle:bundle withName:name];
+    NSBundle *bundle = [SZSandBoxResourceHelper resourcesBundle];
+    return [SZSandBoxResourceHelper imageInBundle:bundle withName:name];
 }
 
 + (NSBundle *)resourcesBundle {
-    return [SLUnilityObject resourcesBundleWithName:QMUIResourcesMainBundleName];
+    return [SZSandBoxResourceHelper resourcesBundleWithName:SZSandBoxResourcesMainBundleName];
 }
 
 + (NSBundle *)resourcesBundleWithName:(NSString *)bundleName {

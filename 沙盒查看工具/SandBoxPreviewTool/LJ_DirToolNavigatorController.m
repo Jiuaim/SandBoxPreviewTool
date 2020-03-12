@@ -7,9 +7,9 @@
 //
 
 #import "LJ_DirToolNavigatorController.h"
-#import "LJ_HomeDirViewController.h"
+#import "SZSandBoxToolHomeViewController.h"
 #import "SuspensionButton.h"
-#import "SLUnilityObject.h"
+#import "SZSandBoxResourceHelper.h"
 @interface LJ_DirToolNavigatorController ()<UIGestureRecognizerDelegate>
 
 @end
@@ -19,7 +19,7 @@
 
 
 + (instancetype)create{
-    LJ_HomeDirViewController * homeDir = [[LJ_HomeDirViewController alloc] init];
+    SZSandBoxToolHomeViewController * homeDir = [[SZSandBoxToolHomeViewController alloc] init];
     homeDir.isHomeDir = YES;
     return [[LJ_DirToolNavigatorController alloc] initWithRootViewController:homeDir];
 }
@@ -59,7 +59,7 @@
         viewController.hidesBottomBarWhenPushed = YES;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //        [button setBackgroundImage:[UIImage imageNamed:@"back_icon"] forState:UIControlStateNormal];
-        [button setBackgroundImage:[SLUnilityObject imageWithName:@"back_icon"] forState:UIControlStateNormal];
+        [button setBackgroundImage:[SZSandBoxResourceHelper imageWithName:@"back_icon"] forState:UIControlStateNormal];
         button.frame = (CGRect){CGPointZero, button.currentBackgroundImage.size};
         [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];

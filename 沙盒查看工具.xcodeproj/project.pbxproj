@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21199D0E241A13F500EE782C /* SZSandBoxToolHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21199D0D241A13F500EE782C /* SZSandBoxToolHomeViewController.m */; };
+		21199D11241A19B200EE782C /* SZSandBoxFileInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21199D10241A19B200EE782C /* SZSandBoxFileInfoModel.m */; };
+		21199D14241A1E7100EE782C /* SZSandBoxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21199D13241A1E7100EE782C /* SZSandBoxTableViewCell.m */; };
+		21199D17241A352800EE782C /* SZSandBoxResourceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 21199D16241A352800EE782C /* SZSandBoxResourceHelper.m */; };
 		4B1EC9CF208DA67D00897D0B /* SandBoxPreviewTool.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4B1EC9CE208DA67D00897D0B /* SandBoxPreviewTool.bundle */; };
-		4B1EC9D2208DA8A500897D0B /* SLUnilityObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B1EC9D1208DA8A500897D0B /* SLUnilityObject.m */; };
 		DCCE721E1EC8F239008E576F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCE721D1EC8F239008E576F /* main.m */; };
 		DCCE72211EC8F239008E576F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCE72201EC8F239008E576F /* AppDelegate.m */; };
 		DCCE72241EC8F239008E576F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCE72231EC8F239008E576F /* ViewController.m */; };
@@ -18,16 +21,20 @@
 		DCE840871EF8BE3A00D8EEBD /* LJ_DirToolNavigatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE840771EF8BE3A00D8EEBD /* LJ_DirToolNavigatorController.m */; };
 		DCE840881EF8BE3A00D8EEBD /* LJ_FileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE840791EF8BE3A00D8EEBD /* LJ_FileInfo.m */; };
 		DCE840891EF8BE3A00D8EEBD /* LJ_FileInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8407B1EF8BE3A00D8EEBD /* LJ_FileInfoController.m */; };
-		DCE8408A1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8407D1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.m */; };
-		DCE8408B1EF8BE3A00D8EEBD /* LJAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8407F1EF8BE3A00D8EEBD /* LJAlertView.m */; };
 		DCE8408C1EF8BE3A00D8EEBD /* SandBoxPreviewTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE840811EF8BE3A00D8EEBD /* SandBoxPreviewTool.m */; };
 		DCE8408F1EF8BE4600D8EEBD /* SuspensionButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE8408E1EF8BE4600D8EEBD /* SuspensionButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21199D0C241A13F500EE782C /* SZSandBoxToolHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZSandBoxToolHomeViewController.h; sourceTree = "<group>"; };
+		21199D0D241A13F500EE782C /* SZSandBoxToolHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSandBoxToolHomeViewController.m; sourceTree = "<group>"; };
+		21199D0F241A19B200EE782C /* SZSandBoxFileInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZSandBoxFileInfoModel.h; sourceTree = "<group>"; };
+		21199D10241A19B200EE782C /* SZSandBoxFileInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSandBoxFileInfoModel.m; sourceTree = "<group>"; };
+		21199D12241A1E7100EE782C /* SZSandBoxTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZSandBoxTableViewCell.h; sourceTree = "<group>"; };
+		21199D13241A1E7100EE782C /* SZSandBoxTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSandBoxTableViewCell.m; sourceTree = "<group>"; };
+		21199D15241A352800EE782C /* SZSandBoxResourceHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZSandBoxResourceHelper.h; sourceTree = "<group>"; };
+		21199D16241A352800EE782C /* SZSandBoxResourceHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSandBoxResourceHelper.m; sourceTree = "<group>"; };
 		4B1EC9CE208DA67D00897D0B /* SandBoxPreviewTool.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SandBoxPreviewTool.bundle; sourceTree = "<group>"; };
-		4B1EC9D0208DA8A500897D0B /* SLUnilityObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLUnilityObject.h; sourceTree = "<group>"; };
-		4B1EC9D1208DA8A500897D0B /* SLUnilityObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLUnilityObject.m; sourceTree = "<group>"; };
 		DCCE72191EC8F239008E576F /* 沙盒查看工具.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "沙盒查看工具.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCCE721D1EC8F239008E576F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCCE721F1EC8F239008E576F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -44,10 +51,6 @@
 		DCE840791EF8BE3A00D8EEBD /* LJ_FileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJ_FileInfo.m; sourceTree = "<group>"; };
 		DCE8407A1EF8BE3A00D8EEBD /* LJ_FileInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJ_FileInfoController.h; sourceTree = "<group>"; };
 		DCE8407B1EF8BE3A00D8EEBD /* LJ_FileInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJ_FileInfoController.m; sourceTree = "<group>"; };
-		DCE8407C1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJ_HomeDirViewController.h; sourceTree = "<group>"; };
-		DCE8407D1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJ_HomeDirViewController.m; sourceTree = "<group>"; };
-		DCE8407E1EF8BE3A00D8EEBD /* LJAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJAlertView.h; sourceTree = "<group>"; };
-		DCE8407F1EF8BE3A00D8EEBD /* LJAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJAlertView.m; sourceTree = "<group>"; };
 		DCE840801EF8BE3A00D8EEBD /* SandBoxPreviewTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandBoxPreviewTool.h; sourceTree = "<group>"; };
 		DCE840811EF8BE3A00D8EEBD /* SandBoxPreviewTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandBoxPreviewTool.m; sourceTree = "<group>"; };
 		DCE8408D1EF8BE4600D8EEBD /* SuspensionButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuspensionButton.h; sourceTree = "<group>"; };
@@ -118,14 +121,16 @@
 				DCE840791EF8BE3A00D8EEBD /* LJ_FileInfo.m */,
 				DCE8407A1EF8BE3A00D8EEBD /* LJ_FileInfoController.h */,
 				DCE8407B1EF8BE3A00D8EEBD /* LJ_FileInfoController.m */,
-				DCE8407C1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.h */,
-				DCE8407D1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.m */,
-				DCE8407E1EF8BE3A00D8EEBD /* LJAlertView.h */,
-				DCE8407F1EF8BE3A00D8EEBD /* LJAlertView.m */,
 				DCE840801EF8BE3A00D8EEBD /* SandBoxPreviewTool.h */,
 				DCE840811EF8BE3A00D8EEBD /* SandBoxPreviewTool.m */,
-				4B1EC9D0208DA8A500897D0B /* SLUnilityObject.h */,
-				4B1EC9D1208DA8A500897D0B /* SLUnilityObject.m */,
+				21199D0C241A13F500EE782C /* SZSandBoxToolHomeViewController.h */,
+				21199D0D241A13F500EE782C /* SZSandBoxToolHomeViewController.m */,
+				21199D0F241A19B200EE782C /* SZSandBoxFileInfoModel.h */,
+				21199D10241A19B200EE782C /* SZSandBoxFileInfoModel.m */,
+				21199D12241A1E7100EE782C /* SZSandBoxTableViewCell.h */,
+				21199D13241A1E7100EE782C /* SZSandBoxTableViewCell.m */,
+				21199D15241A352800EE782C /* SZSandBoxResourceHelper.h */,
+				21199D16241A352800EE782C /* SZSandBoxResourceHelper.m */,
 			);
 			path = SandBoxPreviewTool;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -203,16 +209,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCCE72241EC8F239008E576F /* ViewController.m in Sources */,
-				DCE8408B1EF8BE3A00D8EEBD /* LJAlertView.m in Sources */,
+				21199D0E241A13F500EE782C /* SZSandBoxToolHomeViewController.m in Sources */,
+				21199D11241A19B200EE782C /* SZSandBoxFileInfoModel.m in Sources */,
 				DCE840881EF8BE3A00D8EEBD /* LJ_FileInfo.m in Sources */,
 				DCCE72211EC8F239008E576F /* AppDelegate.m in Sources */,
 				DCE8408C1EF8BE3A00D8EEBD /* SandBoxPreviewTool.m in Sources */,
 				DCCE721E1EC8F239008E576F /* main.m in Sources */,
 				DCE8408F1EF8BE4600D8EEBD /* SuspensionButton.m in Sources */,
 				DCE840871EF8BE3A00D8EEBD /* LJ_DirToolNavigatorController.m in Sources */,
+				21199D17241A352800EE782C /* SZSandBoxResourceHelper.m in Sources */,
+				21199D14241A1E7100EE782C /* SZSandBoxTableViewCell.m in Sources */,
 				DCE840891EF8BE3A00D8EEBD /* LJ_FileInfoController.m in Sources */,
-				4B1EC9D2208DA8A500897D0B /* SLUnilityObject.m in Sources */,
-				DCE8408A1EF8BE3A00D8EEBD /* LJ_HomeDirViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

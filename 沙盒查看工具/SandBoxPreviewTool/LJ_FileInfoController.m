@@ -14,42 +14,40 @@
 
 @interface LJ_FileInfoController ()
 
-@property (nonatomic,strong) UITextView * tView;
-@property (nonatomic,strong) UIWebView * webView;
-@property (nonatomic,copy) NSString * md5;
+@property (nonatomic,strong) UITextView *tView;
+@property (nonatomic,strong) UIWebView *webView;
+@property (nonatomic,copy) NSString *md5;
 
 @end
 
 @implementation LJ_FileInfoController
 
-+ (instancetype)createWithFileName:(NSString *)fileName andFilePath:(NSString *)filePath andFileInfo:(NSDictionary *)fileInfo{
++ (instancetype)createWithFilePath:(NSString *)filePath andFileInfo:(SZSandBoxFileInfoModel *)fileInfo {
     LJ_FileInfoController * infoVC = [[LJ_FileInfoController alloc] init];
     infoVC.filePath = filePath;
-    infoVC.fileName = fileName;
     infoVC.fileInfo = fileInfo;
     return infoVC;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self setUpUI];
 #ifdef DEBUG
-    if ([SandBoxPreviewTool sharedTool].openLog) {
-        NSLog(@"%@",self.filePath);
-    }
+    if ([SandBoxPreviewTool sharedTool].openLog) NSLog(@"%@",self.filePath);
 #endif
 }
 
 - (void)setUpUI{
     
-    self.title = self.fileName;
+    self.title = self.fileInfo.title;
     self.view.backgroundColor = [UIColor whiteColor];
     self.edgesForExtendedLayout = UIRectEdgeNone;//禁止内容从bar底部开始布局
   
     UIBarButtonItem * right = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(shareFile)];
     self.navigationItem.rightBarButtonItem = right;
     
-    NSString * type= [[self.fileName componentsSeparatedByString:@"."] lastObject];
+    NSString * type= [[self.fileInfo.title componentsSeparatedByString:@"."] lastObject];
     UIView * top_View = nil;
     if ([type isEqualToString:@"html"] || [type isEqualToString:@"js"] || [type isEqualToString:@"pdf"] || [type isEqualToString:@"docx"] || [type isEqualToString:@"xlsx"] || [type isEqualToString:@"ppt"] || [type isEqualToString:@"xlsx"] || [type isEqualToString:@"css"]) {
           //go webView  when .js .html .ppt .pdf .docx .css file
@@ -62,7 +60,7 @@
           NSString * string = [NSString stringWithContentsOfFile:self.filePath encoding:NSUTF8StringEncoding error:nil];
           self.tView.text = string;
           top_View = self.tView;
-      }else if ([self.fileInfo[@"FileType"] hasPrefix:@"image"]){
+      }else if ([self.fileInfo.FileType hasPrefix:@"image"]){
         
           //go imageView
           UIImage * image = [[UIImage alloc] initWithContentsOfFile:self.filePath];
@@ -179,9 +177,8 @@
     return responseJSON;
 }
 
-- (id)dictionaryToJson:(NSDictionary *)dic
-{
-    if([dic isKindOfClass:[NSDictionary class]] && dic){
+- (id)dictionaryToJson:(NSDictionary *)dic {
+    if([dic isKindOfClass:[NSDictionary class]] && dic) {
         NSError *parseError = nil;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&parseError];
         if (parseError || !jsonData) {
@@ -195,7 +192,7 @@
 
 
 //字段转换成格式化的字符串
-- (NSString *)changeDicToString:(NSDictionary *)dict{
+- (NSString *)changeDicToString:(NSDictionary *)dict {
     if(!dict)return @"";
     NSMutableString * s = [NSMutableString string];
     [s appendString:@"{\n"];
@@ -208,7 +205,7 @@
 }
 
 //分享文件
-- (void)shareFile{
+- (void)shareFile {
     NSURL *urlToShare = [NSURL fileURLWithPath:self.filePath];
     if (!urlToShare) return;
     NSArray *activityItems = @[urlToShare];
@@ -222,7 +219,7 @@
 }
 
 
-- (void)addFileInfoViewWithTopView:(UIView *)topView{
+- (void)addFileInfoViewWithTopView:(UIView *)topView {
     //底部视图的高度是155
     UIView * bottomView = [[UIView alloc] init];
     [self.view addSubview:bottomView];
@@ -268,7 +265,7 @@
   
     NSString * fileSize, *fileModDate,*fileCreateDate, *fileMD5 = @"";
     //文件大小
-    fileSize = [self.fileInfo objectForKey:NSFileSize];
+    fileSize = [NSString stringWithFormat:@"%ld", self.fileInfo.NSFileSize];
     CGFloat kb = [fileSize floatValue]/1024;
     if (kb < 1024) {
         fileSize = [NSString stringWithFormat:@"%.2f%@",kb,@"kb"];
@@ -278,9 +275,9 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     //文件创建日期
-    fileCreateDate = [dateFormatter stringFromDate:self.fileInfo[NSFileCreationDate]];
+    fileCreateDate = self.fileInfo.fileCreationDate;
     //文件修改日期
-    fileModDate =  [dateFormatter stringFromDate:self.fileInfo[NSFileModificationDate]];
+    fileModDate =  self.fileInfo.fileModificationDate;
     //md5
     fileMD5 = [self.filePath hasSuffix:@".note"] ? @"管道文件，无法获取MD5值" :  [LJ_FileInfo getFileMD5WithPath:self.filePath];
     self.md5 = fileMD5;
@@ -325,14 +322,14 @@
 }
 
 
-- (void)getMD5{
+- (void)getMD5 {
     [UIPasteboard generalPasteboard].string = self.md5;
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"复制该文件MD5成功" message:self.md5 preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
     [self.navigationController presentViewController:alert animated:YES completion:nil];
 }
 
-- (UILabel *)createInfoLabelWithDesc:(NSString * )descStr{
+- (UILabel *)createInfoLabelWithDesc:(NSString * )descStr {
     UILabel * label = [[UILabel alloc] init];
     label.text = descStr;
     label.numberOfLines = 1;
@@ -342,7 +339,7 @@
 }
 
 
-- (UITextView *)tView{
+- (UITextView *)tView {
     if (!_tView) {
       _tView = [[UITextView alloc] init];
       _tView.editable = NO;
@@ -352,7 +349,7 @@
     return _tView;
 }
 
-- (UIWebView *)webView{
+- (UIWebView *)webView {
     if (!_webView) {
         _webView = [[UIWebView alloc] init];
         _webView.backgroundColor = [UIColor whiteColor];
